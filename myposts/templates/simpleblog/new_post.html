@@ -1,0 +1,9 @@
+{% if user.is_authenticated%}
+	<h1>New post</h1>
+		<form method="POST" action='' enctype='multipart/form-data'class="postform">{%csrf_token%}
+		{{ form.as_p }}
+       	<button type="submit" class="save btn btn-default">Save</button>
+    	</form>}
+ {% else%}
+ 	<h1>You are not admin</h1>
+ {% endif %}

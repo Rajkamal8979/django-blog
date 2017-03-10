@@ -1,0 +1,26 @@
+{%extends 'simpleblog/base.html'%}
+
+{%block content%}
+<div class="row">
+          <div class="col-lg-7" style="max-width: 500px; margin: 20px ">
+            {% if posts.image%}
+            <img src='{{posts.image.url}}' class="img-responsive" alt="Sketch"/>
+            <p> <a href="{% url 'editpost' id=posts.id %}"/><i>Edit Post</i></a></p>
+            <br/>
+            {% endif %}
+          </div>
+            <h1>{{posts.title}}</h1>
+            <blockquote><h4>{{posts.text}}</h4></blockquote>
+        </div>
+	
+	<!--<div class="fb-comments" data-href="{{request.build_absolute_uri}}" data-numposts="5"></div>
+	</div>-->
+<!--<form method="POST" action=''>{%csrf_token%}
+	{{form}}
+	<button type="submit" class="save btn btn-default">Post form</button>
+</form>-->
+
+{%endblock content%}
+
+
+

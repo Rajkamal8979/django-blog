@@ -1,0 +1,62 @@
+{% extends 'simpleblog/base.html'%}
+{%block content%}
+
+<div class="jumbotron" id="top">
+        <div class="container text-center" id="top-text">
+            <h1 class="asap-font" id="my-name">Raj Kamal</h1>
+            <h2 class="asap-font" id="my-roll">Technology is FUN!</h2>
+            <small><p id="my-intro">Welcome to my Online Space. This is where I showcase all my Sketches, my projects and the technologies I'm working on</p></small>
+
+            <div class="btn-group buffer">
+                <center>
+                <a href="https://in.linkedin.com/in/raj-kamal-b5154710a" class="btn btn-lg btn-primary outline"><i aria-hidden="false"></i> Linkedin</a>
+                <a href="https://github.com/Rajkamal8979/django-blog.git" class="btn btn-lg btn-success outline"><i class="fa fa-github"></i> GitHub</a><!--success-->
+                <a href="https://s3-us-west-2.amazonaws.com/resumeraj/Raj_1Yr+Exp.pdf" class="btn btn-lg btn-primary default"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> CV</a><!--primary-->
+                </center>
+            </div>
+        </div><!-- End container -->
+    </div>
+
+<div class="container">
+        <section>
+
+
+        <div class="page-header" style="margin-top: 50px;">
+          <h2>My Sketches</h2>
+          <p>All the sketches have been dynamically uploaded.</p>
+          <p>Created a functionality to upload the latest sketches that will be displayed by Ordering of latest Upload</p>
+        </div>
+        {% for post in posts%}
+        
+        <div class="row">
+          <div class="col-lg-7" style="max-width: 500px; margin: 0 ">
+            {% if post.image%}
+            <img src='{{post.image.url}}' class="img-responsive" alt="Sketch"/>
+            <br/>
+            {% endif %}
+          </div>
+            <h3> <a href="{% url 'postdetail' id=post.id %}"> {{post.title}} </a></h3>
+            <blockquote><h4>{{post.text}}</h4></blockquote>
+        </div>
+        {%endfor%}
+      </section> <!-- End Container -->
+    <div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+    </div>
+</div>
+{%endblock content%}
+
+
+

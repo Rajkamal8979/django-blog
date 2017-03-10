@@ -1,0 +1,93 @@
+{% extends 'simpleblog/base.html'%}
+{% load staticfiles %}
+
+{% block content %}
+ <!-- jumbotron-->
+
+  	<div class="jumbotron" id="top">
+  		<div class="container text-center" id="top-text">
+			<h1 class="asap-font" id="my-name">Raj Kamal</h1>
+			<h2 class="asap-font" id="my-roll">Technology is FUN!</h2>
+  			<small><p id="my-intro">Welcome to my Online Space. This is where I showcase all my Sketches, my projects and the technologies I'm working on</p></small>
+
+  			<div class="btn-group buffer">
+				<center>
+  				<a href="https://in.linkedin.com/in/raj-kamal-b5154710a" class="btn btn-lg btn-primary outline"><i aria-hidden="false"></i> Linkedin</a>
+				<a href="https://github.com/Rajkamal8979/django-blog.git" class="btn btn-lg btn-success outline"><i class="fa fa-github"></i> GitHub</a>
+  				<a href="https://s3-us-west-2.amazonaws.com/resumeraj/Raj_1Yr+Exp.pdf" class="btn btn-lg btn-primary default"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> CV</a>
+				</center>
+  			</div>
+  		</div>
+  	</div>
+
+
+
+<div class="container">
+      <div class="row">
+        <div class="col-md-4" class="title-logo" class="img-responsive">
+          <img src="https://s3-us-west-2.amazonaws.com/djangoblog1/media/img.jpg" alt=Image style="width: auto; height: auto; max-width: 150px; border-radius: 60px; margin: 5px;">
+        </div>
+        <div class="col-md-8 text-right text-uppercase">
+        <br/>
+        <br/>
+          <h1 class="title-super text-thin" >Lifter | Believer |  Passionate</h1>
+          <p> <small> Look out my <a href="{% url 'postlist'%}">Sketches </a></small></p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<div class="container" style="margin-top: 20px;">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="panel panel-info text-center">
+                <div class="panel-body">
+                <span class="glyphicon glyphicon-ok"></span>
+                <h4> Technology Stack Of this site</h4>
+                <ul>
+                	<li>HTML CSS Bootstrap</li>
+                	<li>Hacked some Templates</li>
+                	<li>Gave a Driving Engine in Django 1.10</li>
+                </ul>
+                <br>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="panel panel-info text-center">
+                <div class="panel-body">
+                <span class="glyphicon glyphicon-star"></span>
+                <h4>Deployment Stack</h4>
+                <ul>
+                	<li>A VPC in AWS</li>
+                	<li>Instance with a Ubuntu server running NginX for serving browser</li>
+                  <li>Gunicorn as application server to serve django to Nginx </li>
+                	<li>MySQL DB for Django Models</li>
+                	<li>S3 Bucket for Static and media Storage</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="panel panel-info text-center">
+                <div class="panel-body">
+                <span class="glyphicon glyphicon-record"></span>
+                <h4>Contact Me</h4>
+                <p>srajkamal84@gmail.com | 8979214869 | 7329959787</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div> 
+
+<section style="background: black;">
+    <div class="container">
+          <div class="xyz">
+              <h1><small> Python is FUN..... Scoops a Creator out of you</small></h1>
+          </div> <!-- END Page Header -->
+
+{% endblock content%}
+
+    
